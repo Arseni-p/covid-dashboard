@@ -1,0 +1,45 @@
+@import '../common/colors.scss';
+
+.global__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.global__case,
+.global__country,
+.global__update {
+  padding: 5px 0;
+  background-color: $greyBg;
+  border: 1px solid $grey;
+  border-radius: 4px;
+}
+
+.global__count {
+  font-size: 2rem;
+  color: $red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.global__case {
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.global__country {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.global__country--title {
+  margin-bottom: 5px;
+}
+
+.global__update {
+  min-height: 50px;
+}
+
+@media(max-width: 700px) {
+
+}
