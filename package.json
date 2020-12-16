@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development",
+    "start": "webpack serve",
     "eslint": "node_modules/.bin/eslint src/",
     "eslint:fix": "node_modules/.bin/eslint src/ --fix"
   },
