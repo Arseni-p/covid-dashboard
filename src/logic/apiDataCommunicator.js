@@ -1,3 +1,5 @@
+/*Data fields from API*/
+
 /* data: [
 	{
 		updated: 1608139128585,
@@ -28,7 +30,7 @@
 		oneDeathPerPeople: 19496,
 		oneTestPerPeople: 225,
 		activePerOneMillion: 236.62,
-		ecoveredPerOneMillion: 982.81,
+		recoveredPerOneMillion: 982.81,
 		criticalPerOneMillion: 2.36,
 	},
 ]; */
