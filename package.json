@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development",
-    "eslint": "node_modules/.bin/eslint src/",
+    "start": "webpack serve",
+    "eslint": "eslint ./**/*.js",
     "eslint:fix": "node_modules/.bin/eslint src/ --fix"
   },
   "repository": {
