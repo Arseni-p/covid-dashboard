@@ -1,3 +1,3 @@
-import { apiDataCommunicator } from './js/logic/apiDataCommunicator';
+import { tableGlobalCases } from './js/views/tableGlobalCases.js';
 
-console.log('webpack serve!');
+tableGlobalCases.init();

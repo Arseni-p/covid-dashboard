@@ -54,6 +54,6 @@ export const apiDataCommunicator = {
 			this.properties.data = null;
 		}
 		return this.properties.data;
-	},
-};
+    }
+   };
 export default apiDataCommunicator;
