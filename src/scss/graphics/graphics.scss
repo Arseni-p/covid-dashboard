@@ -1,0 +1,55 @@
+@import '../common/colors.scss';
+
+.graphBlock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.graphBlock.fullScreen {
+    padding-top: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(43, 42, 42);
+}
+
+.canvasBlock {
+    position: relative;
+    width: 64%;
+    height: 60%;
+}
+.canvasBlock.full {
+    height:30vh; 
+    width:70vw;
+}
+.switchBlock {
+    display: flex;
+    justify-content: space-around;
+    font-size: 9px;
+    position: relative;
+
+    .switchButton {
+        cursor: pointer;
+    }
+}
+
+.canvas.chartjs-render-monitor#myChart {
+    width: 100vw;
+    height: 100vh;
+}
+
+.open {
+    position: absolute;
+    top: -28px;
+    right: 6px;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
