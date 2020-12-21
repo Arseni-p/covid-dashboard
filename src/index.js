@@ -1,5 +1,1 @@
-
-
-console.log('webpack serve!')
-
-
+console.log('webpack serve!');

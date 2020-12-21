@@ -16,7 +16,7 @@
 }
 
 .global__count {
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: $red;
   font-weight: bold;
   text-align: center;
@@ -30,6 +30,8 @@
 .global__country {
   flex-grow: 1;
   margin-bottom: 10px;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .global__country--title {
