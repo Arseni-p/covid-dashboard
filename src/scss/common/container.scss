@@ -1,12 +1,11 @@
 @import './colors.scss';
 
 .header,
-.container {
+.container,
+.footer {
   margin: 0 auto;
   min-width: 500px;
   max-width: 1300px;
-
-  border: 1px dashed red;
 }
 
 .header {
@@ -18,7 +17,7 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 10px;
-  height: calc(100vh - 50px);
+  /*height: calc(100vh - 50px);*/
 }
 
 
@@ -43,7 +42,8 @@
 
 @media(max-width: 700px) {
   .header,
-  .container {
+  .container,
+  .footer {
     max-width: 600px;
   }
 
@@ -57,7 +57,7 @@
     width: 100%
   }
 
-  .map__wrapper {
-    min-height: 500px;
+  .global__wrapper {
+    margin-bottom: 10px;
   }
 }

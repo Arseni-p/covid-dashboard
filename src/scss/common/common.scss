@@ -15,6 +15,7 @@ body {
   background-color: $black;
   font-family: 'Open Sans', 'Arial Narrow', Arial, sans-serif;
   color: white;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +36,11 @@ ul, ol {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+a,
+button {
+  outline: none;
 }
 
 a:hover,
