@@ -35,6 +35,40 @@
     }
 }
 
+.switchButton {
+  height: 20px;
+  width: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  border: 10px solid transparent;
+
+  &:active {
+    transform: scale(0.8);
+    transition: transform 0.2s linear
+  }
+
+  &.previous {
+    border-left-width: 0;
+    border-right-color: $black;
+
+    &:hover {
+      border-right-color: $grey;
+      transition: border-right-color 0.3s linear;
+    }
+  }
+
+  &.next {
+    border-right-width: 0;
+    border-left-color: $black;
+
+    &:hover {
+      border-left-color: $grey;
+      transition: border-left-color 0.3s linear;
+    }
+  }
+}
+
 .canvas.chartjs-render-monitor#myChart {
     width: 100vw;
     height: 100vh;
@@ -52,4 +86,35 @@
     top: 15px;
     right: 15px;
     cursor: pointer;
+}
+
+.open,
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+
+  &:hover {
+    border-color: $black;
+    color: $black;
+    background-color: white;
+    transition: border-color 0.2s linear, color 0.2s linear, background-color 0.2s linear;
+  }
+
+  &:active {
+    background-color: $black;
+    color: white;
+    transition: color 0.1s linear, background-color 0.1s linear;
+  }
+}
+
+@media(max-width: 700px) {
+  .data.data__graph {
+    min-height: 290px;
+  }
 }
