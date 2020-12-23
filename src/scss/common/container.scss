@@ -1,12 +1,11 @@
 @import './colors.scss';
 
 .header,
-.container {
+.container,
+.footer {
   margin: 0 auto;
   min-width: 500px;
   max-width: 1300px;
-
-  border: 1px dashed red;
 }
 
 .header {
@@ -18,14 +17,15 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 10px;
-  height: calc(100vh - 50px);
+  min-height: 550px;
+  max-height: calc(100vh - 145px);
 }
-
 
 .global__wrapper,
 .map__wrapper,
 .data__wrapper {
   border-radius: 4px;
+  min-height: 500px;
 }
 
 .global__wrapper {
@@ -38,22 +38,35 @@
 
 .map__wrapper {
   width: 52%;
+  border-color: pink;
 }
 
 
 @media(max-width: 700px) {
   .header,
-  .container {
+  .container,
+  .footer {
     max-width: 600px;
   }
 
   .container {
     flex-direction: column;
+    min-height: 1500px;
+    max-height: auto;
   }
 
   .global__wrapper,
   .data__wrapper,
   .map__wrapper {
     width: 100%
+  }
+
+  .global__wrapper {
+    margin-bottom: 10px;
+  }
+
+  .map__wrapper { 
+    min-height: 400px;
+    max-height: 400px;
   }
 }

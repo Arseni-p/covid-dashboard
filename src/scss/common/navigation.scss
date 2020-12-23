@@ -1,0 +1,83 @@
+@import './colors.scss';
+
+.navigation__wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+  height: 25px;
+  z-index: 200;
+}
+
+.navigation__list--wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navigation__list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: left 0.3s ease-in-out
+}
+
+.navigation__item {
+  color: white;
+  font-size: 0.8rem;
+  width: 200px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.navigation__button {
+  position: absolute;
+  top: 3px;
+  height: 20px;
+  width: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  border: 10px solid transparent;
+  
+  
+}
+
+.nav__left {
+  left: -10px;
+  border-left-width: 0;
+  border-right-color: $black;
+
+  &:hover {
+    border-right-color: $grey;
+    transition: border-right-color 0.3s linear;
+  }
+}
+
+.nav__right {
+  right: -10px;
+  border-right-width: 0;
+  border-left-color: $black;
+
+  &:hover {
+    border-left-color: $grey;
+    transition: border-left-color 0.3s linear;
+  }
+}
+
+.disabled-btn {
+  opacity: 0.5;
+  transform: opacity 0.2s linear;
+
+  &:hover {
+    border-left-color: $black;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}

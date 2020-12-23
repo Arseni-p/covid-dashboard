@@ -1,0 +1,144 @@
+@import '../common/colors.scss';
+
+.legend__wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 300;
+  background-color: $blackOpacity;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 20px -5px white;
+}
+
+.legend__list--wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 290px;
+}
+
+.legend__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  width: 210px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.legend__img--wrapper {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.legend__img {
+  display: block;
+  margin-left: auto;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: width 0.2s linear, height 0.2s linear;
+
+  &:hover {
+    border-width: 2px;
+    border-color: $reddark;
+    transition: border-color 0.3s linear, border-width 0.3s linear;
+    cursor: pointer;
+  }
+
+  &.low {
+    width: 20px;
+    height: 20px;
+  }
+  &.premedium {
+    width: 25px;
+    height: 25px;
+  }
+  &.medium {
+    width: 30px;
+    height: 30px;
+  }
+  &.pretop {
+    width: 35px;
+    height: 35px;
+  }
+  &.top {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.legend__gradation {
+  padding-left: 10px;
+}
+
+.legend__btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  z-index: 400;
+
+  &:hover {
+    background-color: white;
+    color: $black;
+    transition: background-color 0.2s linear, color 0.2s linear;
+  }
+
+  &:active {
+    border-color: $black;
+    transition: border-color 0.2s linear;
+  }
+}
+
+@keyframes legendOn {
+  from {width: 40px}
+  to {width: 250px;}
+}
+
+@keyframes legendHeightOn {
+  0%  {height: 40px}
+  50% {height: 40px}
+  100% {height: 290px;}
+}
+
+@keyframes legendOff {
+  0% {width: 250px}
+  50% {width: 250px}
+  100% {width: 40px;}
+}
+
+@keyframes legendHeightOff {
+  from  {height: 290px}
+  to {height: 40px;}
+}
+
+.legend__on {
+  width: 250px;
+  height: 290px;
+  animation: legendOn 1s ease-in-out, legendHeightOn 2s ease-in-out;
+}
+
+.legend__off {
+  width: 40px;
+  height: 40px;
+  animation: legendHeightOff 1s ease-in-out, legendOff 2s ease-in-out;
+}
