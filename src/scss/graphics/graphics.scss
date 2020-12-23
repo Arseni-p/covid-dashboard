@@ -1,37 +1,55 @@
 @import '../common/colors.scss';
 
 .graphBlock {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.graphBlock.fullScreen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &.fullScreen {
     padding-top: 5%;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgb(43, 42, 42);
+    z-index: 1000;
+  }
 }
 
 .canvasBlock {
-    position: relative;
-    width: 64%;
-    height: 60%;
+  position: relative;
+  width: 100%;
+
+  &.full {
+    width: 65%;
+  }
 }
-.canvasBlock.full {
-    height:30vh; 
-    width:70vw;
-}
+
 .switchBlock {
     display: flex;
     justify-content: space-around;
-    font-size: 9px;
+    font-size: 15px;
     position: relative;
+
+    &.fullScreen {
+      z-index: 1500;
+      bottom: 167%;
+      right: 122%;
+      font-size: 20px;
+    }
 
     .switchButton {
         cursor: pointer;
+    }
+
+    .switchTitle {
+      width: 55%;
+      text-align: center;
     }
 }
 
@@ -52,6 +70,10 @@
     border-left-width: 0;
     border-right-color: $black;
 
+    &.fullScreen {
+      border-right-color: #ffbebe;
+    }
+    
     &:hover {
       border-right-color: $grey;
       transition: border-right-color 0.3s linear;
@@ -62,30 +84,30 @@
     border-right-width: 0;
     border-left-color: $black;
 
+    &.fullScreen {
+      border-left-color: #ffbebe;
+    }
+
     &:hover {
       border-left-color: $grey;
       transition: border-left-color 0.3s linear;
     }
   }
-}
-
-.canvas.chartjs-render-monitor#myChart {
-    width: 100vw;
-    height: 100vh;
-}
-
+  
 .open {
     position: absolute;
-    top: -28px;
+    top: -22px;
     right: 6px;
     cursor: pointer;
 }
 
 .close {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 40px;
+    right: 40px;
     cursor: pointer;
+    z-index: 1100;
+    font-size: 12px;
 }
 
 .open,
@@ -111,6 +133,20 @@
     color: white;
     transition: color 0.1s linear, background-color 0.1s linear;
   }
+}
+
+.fullSwitchBlock {
+  display: flex;
+  flex-wrap: wrap;
+  width: 55%;
+
+  .switchItem {
+    margin-right: 10px;
+  }
+}
+
+.chosen {
+  background-color: rgba(255, 243, 243, 0.5);
 }
 
 @media(max-width: 700px) {
