@@ -14,3 +14,5 @@ export const initPopup = () => {
   }
 }
 
+export default initPopup;
+

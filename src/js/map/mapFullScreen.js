@@ -1,10 +1,6 @@
-import { navCount } from "../logic/dataNavigation";
-import { mapInit } from '../map/map.js';
-
 export const mapFullScreen = () => {
   const fullScreenbtn = document.querySelector('.screen__btn');
   const mapForFull = document.querySelector('.map');
-
   fullScreenbtn.addEventListener('click', () => {
     if (!fullScreenbtn.classList.contains('screen__btn--opened')) {
       fullScreenbtn.classList.add('screen__btn--opened');

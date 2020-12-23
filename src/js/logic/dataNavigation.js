@@ -13,7 +13,7 @@ export const dataNavigation = (wrapper, event) => {
   if ( event.target.classList.contains('nav__left') && navCount < maxCount ) {
     btnRight.removeAttribute('disabled');
     btnRight.classList.remove('disabled-btn');
-    navCount++;
+    navCount += 1;
     posX +=navMove;
     navList.style.left = `-${posX}px`;
   }
@@ -21,7 +21,7 @@ export const dataNavigation = (wrapper, event) => {
   if ( event.target.classList.contains('nav__right') && navCount > minCount ) {
     btnLeft.removeAttribute('disabled');
     btnLeft.classList.remove('disabled-btn')
-    navCount--;
+    navCount -= 1;
     posX -=navMove;
     navList.style.left = `-${posX}px`;
   }

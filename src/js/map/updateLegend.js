@@ -19,8 +19,8 @@ export const updateLegend = (navCount, countColors) => {
     };
     item.style.backgroundColor = `${countColors[indexLegendColor]}`;
     legendItems[indexLegendItem].textContent = currLegend;
-    indexLegendColor--;
-    indexLegendItem++;
+    indexLegendColor -= 1;
+    indexLegendItem += 1;
   });
 };
 

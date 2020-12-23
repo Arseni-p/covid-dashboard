@@ -11,10 +11,12 @@ export const legendPopup = () => {
     } else {
       legendWrapper.classList.remove('legend__on');
       legendWrapper.classList.add('legend__off');
-      setTimeout(function() {
+      setTimeout(() => {
         legendBtn.textContent = legendPlus;
         legendWrapper.classList.remove('legend__off');
       }, 2000)
     }
   })
-}
+};
+
+export default legendPopup;

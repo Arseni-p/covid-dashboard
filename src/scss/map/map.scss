@@ -7,10 +7,10 @@ canvas {
     cursor: move;
   }
 }
-
+/*
 .map__wrapper {  
   min-height: calc(100vh - 145px) ;
-}
+}*/
 
 .map {
   position: relative;
@@ -30,7 +30,7 @@ canvas {
   left: 5vw;
   width: 90vw;
   height: 90vh;
-  z-index: 50;
+  z-index: 1000;
   box-shadow: 0 0 30px -5px white;
 }
 
@@ -135,13 +135,28 @@ canvas {
 
 @media(max-width: 700px) {
   .map__wrapper {
-    min-height: 400px;
+    position: relative;
+    margin-bottom: 10px;
+    height: 400px;
   }
 
   .map {
     margin-bottom: 10px;
     padding: 0 10px;
     min-height: 400px;
+    max-height: 400px;  
+  }
+
+  #map {
+    min-height: 370px;
+    max-height: 370px; 
+  }
+
+  .map__full {
+    position: fixed;
+    top: 0;
+    left: -10px;
+    width: calc(100% + 20px);
   }
 }
 

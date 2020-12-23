@@ -82,3 +82,9 @@
   transform: rotate(0);
   animation: screenClose 1s ease-in-out;
 }
+
+@media(max-width: 700px) {
+  .screen__btn {
+    right: 20px;
+  }
+} 

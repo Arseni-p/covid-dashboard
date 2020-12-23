@@ -1,14 +1,13 @@
 import { initMarker } from './init-marker.js';
 import { initPopup } from './init-popup.js';
-import { updateMapInfo } from './updateMapInfo.js';
 import { dataView, modeCount } from '../global/globalVariables.js';
 import { updateLegend } from './updateLegend.js'
 
 
-export let mapInit = (navCount) => {
+export const mapInit = (navCount) => {
   let mapIn = false;
   let dataCovidAPI;
-  var map;
+  let map;
   const mapboxToken = 'pk.eyJ1IjoiYXJzZW5pLXAiLCJhIjoiY2tpcmJ0bTl5MjQ0ZTJxcWplaHQwbTBucCJ9.hwxgqrrfz1HFJ2wR2sHMSw'
   mapboxgl.accessToken = mapboxToken;
  
@@ -26,7 +25,7 @@ export let mapInit = (navCount) => {
   const infoCount = document.querySelector('.country-info__count');
   const infoValue = document.querySelector('.country-info__value');
 
-  let countColors = modeCount.colorsInfected;
+  const countColors = modeCount.colorsInfected;
   const sizeLevel = ['low', 'premedium', 'medium', 'pretop', 'top'];
   const gradation = 100000;
 
@@ -37,21 +36,19 @@ export let mapInit = (navCount) => {
     data.forEach(item => {
       const countryLong = item.countryInfo.long;
       const countryLat = item.countryInfo.lat;
-      let countryInfected = item.cases;
+      const countryInfected = item.cases;
 
-      var el = document.createElement('div');
+      const el = document.createElement('div');
       el.className = 'marker';
       el.style.backgroundColor = initMarker(countryInfected, countColors, navCount);
       el.classList.add(initMarker(countryInfected, sizeLevel, navCount));
-      var marker = new mapboxgl.Marker(el).setLngLat([countryLong, countryLat]).addTo(map);
+      const marker = new mapboxgl.Marker(el).setLngLat([countryLong, countryLat]).addTo(map);
     });
   });
 
   const key = 'AIzaSyCiiIxgZV1xMYCHzFFyh5h_arRS3YsgvHo';
   const mapWrapper = document.getElementById('map');
   const mapContainer = document.querySelector('.map__wrapper');
-  let leftPoint = mapContainer.offsetLeft + mapWrapper.offsetLeft;
-  let topPoint = mapContainer.offsetTop + mapWrapper.offsetTop;
 
   let currNavMode = 0;
   const maxCount = 11;
@@ -63,16 +60,16 @@ export let mapInit = (navCount) => {
 
   updateLegend(navCount, countColors) ;
 
-  map.on('mousemove', function(e) {
+  map.on('mousemove', (e) => {
       mapIn = true;
-      const lat = e.lngLat.lat;
-      const lng = e.lngLat.lng;
-      let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${key}&language=en`;
+      const {lat} = e.lngLat;
+      const {lng} = e.lngLat;
+      const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${key}&language=en`;
       fetch(url)
       .then(response => response.json() )
       .then( data => {
-        let parts = data.results[0].address_components;
-        let countryItem = parts.filter(item => {
+        const parts = data.results[0].address_components;
+        const countryItem = parts.filter(item => {
           if (item.types.includes('country')) {
             return item.types.includes('country');
           }
@@ -101,19 +98,28 @@ export let mapInit = (navCount) => {
            infoBlock.classList.add('country-info__wrapper--on');
          } else {
            infoBlock.classList.remove('country-info__wrapper--on')
-         }  
+         }
+
+         if (countryItem[0].long_name === 'Antarctica') {
+          infoBlock.classList.remove('country-info__wrapper--on')
+         }
        })
     });
 
-    map.on('mouseout', function() {
+    map.on('mouseout', () => {
       mapIn = false;
       infoBlock.classList.remove('country-info__wrapper--on');
     });
 
+  const popupHeight = 90;
   mapWrapper.addEventListener('mousemove', (event) => {
-    let popupPosX = event.pageX - leftPoint - 70;
-    let popupPosY = event.pageY - topPoint - 90;
+    const leftPoint = mapContainer.offsetLeft + mapWrapper.offsetLeft;
+    const topPoint = mapContainer.offsetTop + mapWrapper.offsetTop;
+    const popupPosX = event.pageX - leftPoint;
+    const popupPosY = event.pageY - topPoint - popupHeight;  
     infoBlock.style.left = `${popupPosX}px`
     infoBlock.style.top = `${popupPosY}px`;
   });
-}
+};
+
+export default mapInit;

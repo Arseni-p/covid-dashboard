@@ -104,7 +104,7 @@ const GraphInit = () => {
         document.querySelector('.graphBlock').classList.add('fullScreen');
         document.querySelector('.graphBlock').children[0].classList.add('full');
         document.querySelector('.graphBlock').innerHTML = '';
-        let params = arrayParameter.indexOf(document.querySelector('.switchTitle').innerHTML)
+        const params = arrayParameter.indexOf(document.querySelector('.switchTitle').innerHTML)
         getData(dailyAPI, arrayParamRed[params], true);
         close.addEventListener('click', () => {
             document.querySelector('.graphBlock').classList.remove('fullScreen');
