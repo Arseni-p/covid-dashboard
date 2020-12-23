@@ -73,7 +73,7 @@
     &.fullScreen {
       border-right-color: #ffbebe;
     }
-
+    
     &:hover {
       border-right-color: $grey;
       transition: border-right-color 0.3s linear;
@@ -93,8 +93,7 @@
       transition: border-left-color 0.3s linear;
     }
   }
-}
-
+  
 .open {
     position: absolute;
     top: -22px;

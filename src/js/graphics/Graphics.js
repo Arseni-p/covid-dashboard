@@ -17,7 +17,7 @@ class Graphics {
         ctx.id = 'myChart';
         ctx.setAttribute('width', '295');
         ctx.setAttribute('height', '190');
-        let param = this.parameter;
+        const param = this.parameter;
         const screen = this.fullScreen;
         const world = this.world;
         let color = '';

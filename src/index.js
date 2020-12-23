@@ -7,8 +7,9 @@ import { updateMapInfo } from './js/map/updateMapInfo.js';
 import { legendPopup } from './js/map/legendPopup.js';
 import { mapFullScreen } from './js/map/mapFullScreen.js';
 
-GraphInit();
+
 tableGlobalCases.init();
+GraphInit();
 
 document.addEventListener('DOMContentLoaded', () => {
   mapInit(navCount);
@@ -22,4 +23,3 @@ mapWrapper.addEventListener('click', (event) => {
     updateMapInfo(navCount);  
   }
 });
-
