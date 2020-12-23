@@ -46,7 +46,7 @@ export const mapInit = (navCount) => {
     });
   });
 
-  const key = 'AIzaSyCiiIxgZV1xMYCHzFFyh5h_arRS3YsgvHo';
+  const key = 'AIzaSyCp600xL8-9R5u_4AjkxZCae7DtXswgl2s';
   const mapWrapper = document.getElementById('map');
   const mapContainer = document.querySelector('.map__wrapper');
 
