@@ -6,10 +6,12 @@ import { navCount, dataNavigation } from './js/logic/dataNavigation.js';
 import { updateMapInfo } from './js/map/updateMapInfo.js';
 import { legendPopup } from './js/map/legendPopup.js';
 import { mapFullScreen } from './js/map/mapFullScreen.js';
+import Search from './js/search/search'
 
 
 tableGlobalCases.init();
 GraphInit();
+Search();
 
 document.addEventListener('DOMContentLoaded', () => {
   mapInit(navCount);
