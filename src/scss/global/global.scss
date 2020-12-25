@@ -16,6 +16,10 @@
   border-radius: 4px;
 }
 
+.global__wrapper {
+  position: relative;
+}
+
 .global__count {
   font-size: 1.2rem;
   color: $red;
@@ -31,6 +35,7 @@
 .global__country {
   flex-grow: 1;
   margin-bottom: 10px;
+  height: 100vh;
   overflow-y: auto;
   overflow-x: auto;
 }

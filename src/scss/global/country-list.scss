@@ -29,6 +29,10 @@ table td:nth-child(2) {
 
 .tableTwo td {
     text-align: center;
+
+    &:last-child {
+      cursor: pointer;  
+    }
 }
 
 .tableTwo th {

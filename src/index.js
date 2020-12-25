@@ -6,7 +6,8 @@ import { navCount, dataNavigation } from './js/logic/dataNavigation.js';
 import { updateMapInfo } from './js/map/updateMapInfo.js';
 import { legendPopup } from './js/map/legendPopup.js';
 import { mapFullScreen } from './js/map/mapFullScreen.js';
-import Search from './js/search/search'
+import Search from './js/search/search';
+import { keyboard } from './js/keyboard/keyboard.js';
 
 
 tableGlobalCases.init();
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mapInit(navCount);
   legendPopup();
   mapFullScreen();
+  keyboard();
 });
 
 mapWrapper.addEventListener('click', (event) => {
