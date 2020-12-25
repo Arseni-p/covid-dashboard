@@ -2,6 +2,7 @@ import { apiDataCommunicator } from '../logic/apiDataCommunicator.js';
 import { sortTableByColumn } from '../logic/sortMethod.js';
 import formatInt from '../logic/format.js';
 import Slider from './slider.js';
+import addDisplayOnFullScreen from '../logic/addDisplayOnFullScreen.js';
 
 export const mainTableTwelveIndex = {
 	properties: {
@@ -91,6 +92,7 @@ export const mainTableTwelveIndex = {
 		cases: null,
 		deaths: null,
 		recovered: null,
+		tableContainer: null
 	},
 
 	async init() {
@@ -100,6 +102,7 @@ export const mainTableTwelveIndex = {
 		this.fillDataTableWorldCases();
 		this.addTabsSwitcher();
 		this.drawTableAccordingSwitch();
+		addDisplayOnFullScreen('.data__lives');
 	},
 
 	drawTable() {
@@ -140,6 +143,7 @@ export const mainTableTwelveIndex = {
 	},
 
 	getElements() {
+		this.controlsUI.tableContainer = document.querySelector('.data__lives');
 		this.controlsUI.tableWorldTotal = document.querySelector('.data__world');
 		this.controlsUI.tableTwelveIndex = document.querySelector(
 			'.data__tableTwelveIndex'
