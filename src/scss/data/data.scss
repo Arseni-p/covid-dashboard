@@ -17,6 +17,116 @@
   border-radius: 4px;
 }
 
+.data__lives{
+  width: 100%;
+  }
+
+  .table__world, .table__twelve {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size:0.8rem;
+}
+
+.table__twelve {
+  overflow: auto;
+    height: 280px;
+}
+.switch__tableTwelveIndex{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.table__world{
+  font-size: 1rem;
+  }
+
+
+.table__world tr td:first-child{
+  color: aliceblue;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table__world td:nth-child(2) {
+  color:$red;
+  font-weight: bold;
+}
+
+.table__world td:nth-child(3) {
+  color:  yellow;
+  font-weight: bold;
+}
+
+.table__world td:nth-child(4) {
+  color: $green;
+  font-weight: bold;
+}
+
+.table__twelve img{
+  width: 1.3rem;
+}
+
+thead th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+tbody th {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+}
+
+thead th:first-child {
+    left: 0;
+    z-index: 10;
+}
+
+/*table tr td:first-child{
+  color: $red;
+  font-weight: bold;
+  text-align: right;
+}
+
+table td:nth-child(2) {
+    text-align: left;
+}*/
+
+.table__twelve td {
+    text-align: center;
+}
+
+.table__twelve th {
+    cursor: pointer;
+    background-color:#848482;
+}
+
+.table__twelve .sort-asc::after {
+    content: "\25b4";
+}
+
+.table__twelve .sort-desc::after {
+    content: "\25be";
+}
+
+.table__twelve .sort-asc::after,
+.table__twelve .sort-desc::after {
+    margin-left: 5px;
+}
+
+.table__twelve .sort-asc,
+.table__twelve .sort-desc {
+    background: rgba(47, 79, 79, 1);
+}
+
+
+
+
 .data:last-child {
   margin: 0;
   width: 100%;

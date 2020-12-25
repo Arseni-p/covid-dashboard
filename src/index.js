@@ -9,8 +9,10 @@ import { mapFullScreen } from './js/map/mapFullScreen.js';
 import Search from './js/search/search';
 import { keyboard } from './js/keyboard/keyboard.js';
 
+import { mainTableTwelveIndex } from './js/views/mainTableTwelveIndex.js';
 
 tableGlobalCases.init();
+mainTableTwelveIndex.init();
 GraphInit();
 Search();
 
@@ -22,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 mapWrapper.addEventListener('click', (event) => {
-  if ( event.target.classList.contains('navigation__button') ) {
-    dataNavigation(mapWrapper, event);
-    updateMapInfo(navCount);  
-  }
+	if (event.target.classList.contains('navigation__button')) {
+		dataNavigation(mapWrapper, event);
+		updateMapInfo(navCount);
+	}
 });
