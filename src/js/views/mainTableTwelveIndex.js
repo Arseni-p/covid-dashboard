@@ -99,7 +99,7 @@ export const mainTableTwelveIndex = {
 		this.createTableWorldCases();
 		this.fillDataTableWorldCases();
 		this.addTabsSwitcher();
-        this.drawTableAccordingSwitch();
+		this.drawTableAccordingSwitch();
 	},
 
 	drawTable() {
@@ -119,7 +119,7 @@ export const mainTableTwelveIndex = {
 		);
 	},
 
-	drawTableAccordingSwitch(delta=0) {
+	drawTableAccordingSwitch(delta = 0) {
 		this.properties.tabIndex += delta;
 
 		if (this.properties.tabIndex === -1)
@@ -256,7 +256,6 @@ export const mainTableTwelveIndex = {
 		const headerList = document.querySelectorAll('.table__twelve th');
 		headerList.forEach((headerCell) => {
 			headerCell.addEventListener('click', () => {
-				console.log('rvgshjdfkhsdkj');
 				const tableElement =
 					headerCell.parentElement.parentElement.parentElement;
 				const columnIndex = Array.prototype.indexOf.call(

@@ -87,15 +87,9 @@ thead th:first-child {
     z-index: 10;
 }
 
-/*table tr td:first-child{
-  color: $red;
-  font-weight: bold;
-  text-align: right;
+.table__twelve tr td:first-child{
+   text-align: left;
 }
-
-table td:nth-child(2) {
-    text-align: left;
-}*/
 
 .table__twelve td {
     text-align: center;
