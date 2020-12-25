@@ -11,8 +11,8 @@ class Graphics {
     }
     
     init() {
-        const mes = ['Январь   ', 'Февраль   ', 'Март   ', 'Апрель   ', 'Май   ', 'Июнь   ', 'Июль   ', 'Август   ', 'Сентябрь   ', 'Октябрь   ', 'Ноябрь   ', 'Декабрь   '];
-        const mesReduced = ['Янв.  ', 'Февр.  ', 'Март  ', 'Апр.  ', 'Май  ', 'Июнь  ', 'Июль  ', 'Авг.  ', 'Сент.  ', 'Окт.  ', 'Нояб.  ', 'Дек.  '];
+        const mes = ['January   ', 'February   ', 'March   ', 'April   ', 'May   ', 'June   ', 'July   ', 'August   ', 'September   ', 'October   ', 'November   ', 'December   '];
+        const mesReduced = ['Jan.  ', 'Feb.  ', 'March  ', 'April  ', 'May  ', 'June  ', 'July  ', 'Aug.  ', 'Sept.  ', 'Oct.  ', 'Nov.  ', 'Dec.  '];
         const ctx = this.createElement('canvas', 'canvas');
         ctx.id = 'myChart';
         ctx.setAttribute('width', '295');

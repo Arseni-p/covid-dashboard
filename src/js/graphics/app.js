@@ -222,7 +222,7 @@ const GraphInit = () => {
     })
 
     setTimeout(() => {
-        document.querySelectorAll('tr').forEach(tr => {
+        document.querySelectorAll('tbody tr').forEach(tr => {
             tr.addEventListener('click', () => {
                 document.querySelectorAll('tr').forEach(item => {
                     if (item.classList.contains('chosen')) item.classList.remove('chosen');
