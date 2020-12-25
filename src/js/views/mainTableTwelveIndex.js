@@ -15,15 +15,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => x['cases'],
+						value: (x) => x.cases,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => x['deaths'],
+						value: (x) => x.deaths,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => x['recovered'],
+						value: (x) => x.recovered,
 					},
 				],
 			},
@@ -32,15 +32,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => x['todayCases'],
+						value: (x) => x.todayCases,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => x['todayDeaths'],
+						value: (x) => x.todayDeaths,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => x['todayRecovered'],
+						value: (x) => x.todayRecovered,
 					},
 				],
 			},
@@ -49,15 +49,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => x['casesPerOneMillion'] / 10,
+						value: (x) => x.casesPerOneMillion / 10,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => x['deathsPerOneMillion'] / 10,
+						value: (x) => x.deathsPerOneMillion / 10,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => x['recoveredPerOneMillion'] / 10,
+						value: (x) => x.recoveredPerOneMillion / 10,
 					},
 				],
 			},
@@ -66,15 +66,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => (x['todayCases'] / x['population']) * 100000,
+						value: (x) => (x.todayCases / x.population) * 100000,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => (x['todayDeaths'] / x['population']) * 100000,
+						value: (x) => (x.todayDeaths / x.population) * 100000,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => (x['todayRecovered'] / x['population']) * 100000,
+						value: (x) => (x.todayRecovered / x.population) * 100000,
 					},
 				],
 			},

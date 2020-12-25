@@ -1,8 +1,8 @@
-export let mapInit = () => {
+export const mapInit = () => {
   const mapboxToken = 'pk.eyJ1IjoiYXJzZW5pLXAiLCJhIjoiY2tpcmJ0bTl5MjQ0ZTJxcWplaHQwbTBucCJ9.hwxgqrrfz1HFJ2wR2sHMSw'
 
   mapboxgl.accessToken = mapboxToken;
-  var map = new mapboxgl.Map({
+  const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/dark-v10',
   zoom: 2,
@@ -15,7 +15,7 @@ export let mapInit = () => {
     const preTopCount = 500000;
     const mediumCount = 100000;
     const preMediumCount = 50000;
-    //const countColors = ['#9B0000', '#C60000', '#ff0000', '#FF3939', '#FF6464'];
+    // const countColors = ['#9B0000', '#C60000', '#ff0000', '#FF3939', '#FF6464'];
     const topColor = 'rgba(155, 0, 0, 0.7)';
     const preTopColor = 'rgba(198, 0, 0, 0.7)';
     const mediumColor = 'rgba(255, 0, 0, 0.7)';
@@ -39,10 +39,10 @@ export let mapInit = () => {
       const countryInfected = item.cases;
       console.log(countryId, countryInfected);
       
-      var el = document.createElement('div');
+      const el = document.createElement('div');
       el.className = 'marker';
       el.style.backgroundColor = getColor(countryInfected);
-      var marker = new mapboxgl.Marker(el).setLngLat([countryLong, countryLat]).addTo(map);
+      const marker = new mapboxgl.Marker(el).setLngLat([countryLong, countryLat]).addTo(map);
       
     })
   });
@@ -51,9 +51,9 @@ export let mapInit = () => {
 /*
   data.forEach(item => {
     console.log(item.countryInfo)
-  })*/
+  }) */
 
-  //L.map('map').setView([53.91, 27.56], 4);
+  // L.map('map').setView([53.91, 27.56], 4);
 
 
 /*
@@ -75,4 +75,4 @@ var marker = L.marker([L.marker(53.91, 27.56)]).addTo(map);
 
 }
 
-//https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=ohRx1axR0hGFTkU0Qrth
+// https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=ohRx1axR0hGFTkU0Qrth

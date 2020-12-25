@@ -18,7 +18,7 @@ const GraphInit = () => {
     function getParams(operation, fullScreen, country = false, target = 'World') {
         const paramsNow = document.querySelector('.switchTitle').innerHTML;
         let indParams;
-        let api = country ? (countriesAPI + country) : dailyAPI;
+        const api = country ? (countriesAPI + country) : dailyAPI;
         if (arrayParameter.indexOf(paramsNow) === -1) {
             indParams = 0;
         } else {
@@ -86,9 +86,9 @@ const GraphInit = () => {
 
     function casesPerHundred(cases) {
         const population = 7827000000;
-        let arrAllPerHundred = [];
+        const arrAllPerHundred = [];
         cases.forEach(elem => {
-            let count = elem / population * 100000;
+            const count = elem / population * 100000;
             arrAllPerHundred.push(count.toFixed(3));
         })
         return arrAllPerHundred;
@@ -105,7 +105,7 @@ const GraphInit = () => {
         const arrDate = [];
         const arrDiff = [];
         const arrDiffDeath = [];
-        let arrDiffRec = [];
+        const arrDiffRec = [];
         data.forEach(item => {
             arrCases.push(item.confirmed);
             arrDeath.push(item.deaths);
@@ -204,7 +204,7 @@ const GraphInit = () => {
         document.querySelector('.switchButton.previous').classList.add('fullScreen');
         document.querySelector('.switchButton.next').classList.add('fullScreen');
         document.querySelector('.open').style.display = 'none';
-        let params = arrayParameter.indexOf(document.querySelector('.switchTitle').innerHTML);
+        const params = arrayParameter.indexOf(document.querySelector('.switchTitle').innerHTML);
         let countryName;
         if (document.querySelector('tr.chosen')) {
             countryName = document.querySelector('tr.chosen').children[1].textContent;
