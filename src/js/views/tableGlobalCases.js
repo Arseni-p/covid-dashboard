@@ -1,4 +1,3 @@
-import { createElement } from '../logic/createElement.js';
 import { apiDataCommunicator } from '../logic/apiDataCommunicator.js';
 import { sortTableByColumn } from '../logic/sortMethod.js';
 

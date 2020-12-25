@@ -17,7 +17,7 @@ export const keyboard = () => {
   const leftBtn = document.querySelector('.left');
   const rightBtn = document.querySelector('.right');
 
-  let tableSearch = () => {
+  const tableSearch = () => {
     const table = document.querySelector('.tableTwo');
     const regExp = new RegExp(outputArea.value, 'i');
     console.log(outputArea.value)
@@ -37,7 +37,7 @@ export const keyboard = () => {
     }
   }
 
-  let insertFunc = () => {
+  const insertFunc = () => {
     let pointStart = outputArea.selectionStart;
     let pointEnd = outputArea.selectionEnd;
     if ( shiftBtn ) {
@@ -52,7 +52,7 @@ export const keyboard = () => {
     outputArea.selectionEnd = pointEnd;
   };
 
-  let shiftFunc = () => {
+  const shiftFunc = () => {
   
     if ( !shiftBtn ) {
       shiftStatus.style.backgroundColor = '#90ee90';
@@ -70,7 +70,7 @@ export const keyboard = () => {
     }
   }
 
-  kbBtn.addEventListener('click', function(event) {
+  kbBtn.addEventListener('click', (event) => {
     if ( kbOff ) {
       kbWrapper.classList.remove('keyboard__content--off');
       kbWrapper.classList.add('keyboard__content--on');
@@ -84,7 +84,7 @@ export const keyboard = () => {
     }
 
     if ( kbOff ) {
-      setTimeout( function() {
+      setTimeout( () => {
         kbWrapper.classList.remove('keyboard__content--on');
         kbWrapper.classList.remove('keyboard__content--off');
         kbBtn.classList.remove('keyboard__btn--off');
@@ -108,7 +108,7 @@ export const keyboard = () => {
       )) {
         letter = point.querySelector('.curr__item').textContent;
         
-  //Up & down
+  // Up & down
         if ( shiftBtn ) {
           ( outputArea.selectionStart < outputArea.value.length ) ? insertFunc() : outputArea.value +=letter.toUpperCase();
         } else {
@@ -117,7 +117,7 @@ export const keyboard = () => {
       }
 
   
-  //SHIFT IF CAPSLOCK IS ON
+  // SHIFT IF CAPSLOCK IS ON
       if ( point.classList.contains('shift') ) {
         if ( !shiftBtn ) {
           shiftStatus.style.backgroundColor = '#90ee90';
@@ -135,13 +135,13 @@ export const keyboard = () => {
       } 
       
   
-  //SHIFT IF CAPSLOCK IS OFF
+  // SHIFT IF CAPSLOCK IS OFF
        if ( point.classList.contains('shift') ) {
         shiftFunc();
       }
 
   
-  //BACKSPACE
+  // BACKSPACE
       if ( point.classList.contains('backspace') ) {
         if ( outputArea.selectionStart < outputArea.value.length ) {
           let pointStart = outputArea.selectionStart;
@@ -161,7 +161,7 @@ export const keyboard = () => {
         }
       } 
   
-  //SPACE
+  // SPACE
       if ( point.classList.contains('space') ) {
         letter = ' ';
         insertFunc();
@@ -170,7 +170,7 @@ export const keyboard = () => {
     tableSearch();
   });
 
-  leftBtn.addEventListener('click', function() {
+  leftBtn.addEventListener('click', () => {
     outputArea.focus();
     outputArea.selectionStart;
     outputArea.selectionEnd;
@@ -187,7 +187,7 @@ export const keyboard = () => {
     };
   })
 
-  rightBtn.addEventListener('click', function() {
+  rightBtn.addEventListener('click', () => {
     if (shiftBtn) {
       ( moveX == 0 ) ? moveX = 0 : moveX--;
 
@@ -213,7 +213,7 @@ export const keyboard = () => {
       if ( soundValue ) clickSoundKeyShift();
 
       shiftStatus.classList.add('key-bg__click');
-      setTimeout(function() {
+      setTimeout(() => {
         shiftStatus.classList.remove('key-bg__click');
       }, 1000)
 

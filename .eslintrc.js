@@ -15,5 +15,7 @@ module.exports = {
 	plugins: ['prettier'],
 	rules: {
 		'no-plusplus': 0,
+		'import/no-named-as-default': 0,
+		'import/extensions': ['error', 'always', { ignorePackages: true }],
 	},
 };

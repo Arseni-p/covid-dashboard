@@ -19,7 +19,7 @@ class Graphics {
         ctx.setAttribute('height', '190');
         const param = this.parameter;
         const screen = this.fullScreen;
-        const world = this.world;
+        const {world} = this;
         let color = '';
         if (this.parameter === 'recovered' || this.parameter === 'allRecov' 
             || this.parameter === 'recoveredHun' || this.parameter === 'hunAllRecovered') {

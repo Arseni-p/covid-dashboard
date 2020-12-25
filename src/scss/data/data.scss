@@ -17,47 +17,43 @@
   border-radius: 4px;
 }
 
-.data__lives{
+.data__lives {
   width: 100%;
-  }
+}
 
-  .table__world, .table__twelve {
+.data__tableTwelveIndex {
+  overflow-y: auto;
+  overflow-x: auto;
+  height: 250px;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.table__world,
+.table__twelve {
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size:0.8rem;
+  font-size: 0.8rem;
 }
 
-.table__twelve {
-  overflow: auto;
-    height: 280px;
-}
-.switch__tableTwelveIndex{
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-
-.table__world{
+.table__world {
   font-size: 1rem;
-  }
+}
 
-
-.table__world tr td:first-child{
+.table__world tr td:first-child {
   color: aliceblue;
   font-weight: bold;
   text-align: center;
 }
 
 .table__world td:nth-child(2) {
-  color:$red;
+  color: $red;
   font-weight: bold;
 }
 
 .table__world td:nth-child(3) {
-  color:  yellow;
+  color: yellow;
   font-weight: bold;
 }
 
@@ -66,62 +62,56 @@
   font-weight: bold;
 }
 
-.table__twelve img{
+.table__twelve img {
   width: 1.3rem;
 }
 
 thead th {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 tbody th {
-    position: -webkit-sticky;
-    position: sticky;
-    left: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
 }
 
 thead th:first-child {
-    left: 0;
-    z-index: 10;
+  left: 0;
+  z-index: 10;
 }
 
-/*table tr td:first-child{
-  color: $red;
-  font-weight: bold;
-  text-align: right;
+.table__twelve tr td:first-child {
+  text-align: left;
 }
-
-table td:nth-child(2) {
-    text-align: left;
-}*/
 
 .table__twelve td {
-    text-align: center;
+  text-align: center;
 }
 
 .table__twelve th {
-    cursor: pointer;
-    background-color:#848482;
+  cursor: pointer;
+  background-color: #848482;
 }
 
 .table__twelve .sort-asc::after {
-    content: "\25b4";
+  content: "\25b4";
 }
 
 .table__twelve .sort-desc::after {
-    content: "\25be";
+  content: "\25be";
 }
 
 .table__twelve .sort-asc::after,
 .table__twelve .sort-desc::after {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .table__twelve .sort-asc,
 .table__twelve .sort-desc {
-    background: rgba(47, 79, 79, 1);
+  background: rgba(47, 79, 79, 1);
 }
 
 
@@ -169,7 +159,7 @@ table td:nth-child(2) {
 .lives__item--text,
 .lives__item--value,
 .level__item--text,
-.level__item--value  {
+.level__item--value {
   font-size: 0.7rem;
 }
 
@@ -179,6 +169,7 @@ table td:nth-child(2) {
 }
 
 @media(max-width: 700px) {
+
   .data__lives,
   .data__level {
     height: 200px;

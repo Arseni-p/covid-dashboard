@@ -15,15 +15,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => x['cases'],
+						value: (x) => x.cases,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => x['deaths'],
+						value: (x) => x.deaths,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => x['recovered'],
+						value: (x) => x.recovered,
 					},
 				],
 			},
@@ -32,15 +32,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => x['todayCases'],
+						value: (x) => x.todayCases,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => x['todayDeaths'],
+						value: (x) => x.todayDeaths,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => x['todayRecovered'],
+						value: (x) => x.todayRecovered,
 					},
 				],
 			},
@@ -49,15 +49,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => x['casesPerOneMillion'] / 10,
+						value: (x) => x.casesPerOneMillion / 10,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => x['deathsPerOneMillion'] / 10,
+						value: (x) => x.deathsPerOneMillion / 10,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => x['recoveredPerOneMillion'] / 10,
+						value: (x) => x.recoveredPerOneMillion / 10,
 					},
 				],
 			},
@@ -66,15 +66,15 @@ export const mainTableTwelveIndex = {
 				rows: [
 					{
 						name: 'Cases',
-						value: (x) => (x['todayCases'] / x['population']) * 100000,
+						value: (x) => (x.todayCases / x.population) * 100000,
 					},
 					{
 						name: 'Deaths',
-						value: (x) => (x['todayDeaths'] / x['population']) * 100000,
+						value: (x) => (x.todayDeaths / x.population) * 100000,
 					},
 					{
 						name: 'Recovered',
-						value: (x) => (x['todayRecovered'] / x['population']) * 100000,
+						value: (x) => (x.todayRecovered / x.population) * 100000,
 					},
 				],
 			},
@@ -99,7 +99,7 @@ export const mainTableTwelveIndex = {
 		this.createTableWorldCases();
 		this.fillDataTableWorldCases();
 		this.addTabsSwitcher();
-        this.drawTableAccordingSwitch();
+		this.drawTableAccordingSwitch();
 	},
 
 	drawTable() {
@@ -119,7 +119,7 @@ export const mainTableTwelveIndex = {
 		);
 	},
 
-	drawTableAccordingSwitch(delta=0) {
+	drawTableAccordingSwitch(delta = 0) {
 		this.properties.tabIndex += delta;
 
 		if (this.properties.tabIndex === -1)
@@ -256,7 +256,6 @@ export const mainTableTwelveIndex = {
 		const headerList = document.querySelectorAll('.table__twelve th');
 		headerList.forEach((headerCell) => {
 			headerCell.addEventListener('click', () => {
-				console.log('rvgshjdfkhsdkj');
 				const tableElement =
 					headerCell.parentElement.parentElement.parentElement;
 				const columnIndex = Array.prototype.indexOf.call(
