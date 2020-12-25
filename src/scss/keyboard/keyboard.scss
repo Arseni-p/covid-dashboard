@@ -1,0 +1,267 @@
+@import '../common/colors.scss';
+
+.output__wrap {
+  margin-bottom: 30px;
+}
+
+.output__area {
+  width: 100%;
+  height: 100%;
+  border: 1px solid grey;
+  font-size: inherit;
+  line-height: 1.1;
+  font-family: inherit;
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.keyboard__wrap {
+  position: relative;
+  width: 100%;
+}
+
+.keyboard__btn {
+  position: absolute;
+  top: -30px;
+  right: 0;
+
+  width: 50px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.keyboard__btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.keyboard__btn--on {
+  transform: rotateX(180deg);
+  transition: transform 1s ease-in-out;
+}
+
+.keyboard__btn--off {
+  transform: rotateX(0deg);
+  transition: transform 1s ease-in-out;
+}
+
+@keyframes kb__on {
+  from {top: -1000px; }
+  to {top: calc(100% - 150px);}
+}
+
+@keyframes kb__off {
+  from {top: calc(100% - 150px);}
+  to {top: -500px;}
+}
+
+.keyboard__content {
+  display: none;
+  position: absolute;
+  top: calc(100% - 150px);
+  left: 0;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 5px;
+  padding-bottom: 0;
+  width: 480px;
+  font-size: 0.8rem;
+  background-color: $blackOpacity;
+  z-index: 50;
+}
+
+.keyboard__content--on {
+  display: block;
+  top: calc(100% - 150px);
+  animation: kb__on 1.2s ease-in-out;
+}
+
+.keyboard__content--off {
+  top: -500px;
+  animation: kb__off 1.2s ease-in-out;
+}
+
+.keyboard__row {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.key__btn {
+  /*position: relative;*/
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+  padding: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 30px;
+  /*max-width: 70px;*/
+  height: 30px;
+
+  color: lightgray;
+  line-height: 1;
+
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  outline: none;
+}
+
+.key__btn:last-child {
+  margin-right: 0;
+}
+
+.key__btn:hover {
+  cursor: pointer;
+  border-color: white;
+  color: white;
+  background-color: $black;
+  transition: border-color 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+}
+
+.key__btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.7);
+}
+
+@keyframes key-bg-click {
+  0% {background-color: transparent};
+  100% {background-color: #56ffb6};
+}
+
+.key-bg__click {
+  animation: key-bg-click 1s linear;
+}
+
+.eng__symbol,
+.rus__symbol {
+  width: 45%;
+
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 2px;
+  /*border: 1px dashed red;*/
+}
+
+.shift__eng,
+.yo__symbol--eng {
+  width: 100%;
+  text-align: left;
+}
+
+.number__symbol {
+  align-self: flex-end;
+  width: 100%;
+  text-align: left;
+  line-height: 1;
+}
+
+
+.backspace,
+.enter,
+.shift,
+.left,
+.right,
+.space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter,
+.shift {
+  width: 20%;
+}
+
+.backspace {
+  width: 8%;
+}
+
+.shift {
+  position: relative;
+}
+
+.capslock__status,
+.shift__status {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+
+  background-color:  #000000; 
+}
+
+.space {
+  width: 40%;
+}
+
+.eng__letter {
+  width: 100%;
+  font-size: 0.8em;
+  line-height: 1;
+}
+
+.eng__letter {
+  margin-bottom: 2px;
+}
+
+.shift__eng,
+.shift__eng--dubble {
+  margin-bottom: 2px;
+  font-size: 0.8em;
+}
+
+.shift__eng--dubble,
+.eng__letter--double {
+  width: 45%;
+}
+
+.shift__eng--dubble {
+  text-align: left;
+}
+
+/*
+.eng__letter--symb,
+.rus__letter--symb {
+  width: 45%;
+}*/
+
+.eng__letter {
+  text-align: center;
+}
+
+.curr__item {
+  width: 100%;
+  height: 100%;
+}
+
+.curr__item,
+.curr__item--special {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: white;
+    transition: color 0.1s linear;
+  }
+}
+/*
+.eng__symbol.curr__item {
+  color: yellow;
+  font-size: 14px;
+}*/
+
+.arrow {
+  font-size: 0.8rem;
+}
