@@ -1,5 +1,6 @@
 import { apiDataCommunicator } from '../logic/apiDataCommunicator.js';
 import { sortTableByColumn } from '../logic/sortMethod.js';
+import addDisplayFullScreen from '../logic/addDisplayOnFullScreen.js'
 
 export const tableGlobalCases = {
 	properties: {
@@ -20,6 +21,7 @@ export const tableGlobalCases = {
 		this.fillDataTableTwo();
         this.updateDate();
         this.addSorting();
+        addDisplayFullScreen('.global__country');
 	},
 
 	async forceUpdateDataAndTime() {

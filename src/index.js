@@ -1,4 +1,4 @@
-import { tableGlobalCases } from './js/views/tableGlobalCases.js';
+import { tableGlobalCases } from './js/views/tableGlobalCases.js';/*
 import GraphInit from './js/graphics/app';
 import { mapInit } from './js/map/map.js';
 import { mapWrapper } from './js/global/globalVariables.js';
@@ -7,13 +7,13 @@ import { updateMapInfo } from './js/map/updateMapInfo.js';
 import { legendPopup } from './js/map/legendPopup.js';
 import { mapFullScreen } from './js/map/mapFullScreen.js';
 import Search from './js/search/search';
-import { keyboard } from './js/keyboard/keyboard.js';
+import { keyboard } from './js/keyboard/keyboard.js';*/
 
 import { mainTableTwelveIndex } from './js/views/mainTableTwelveIndex.js';
 
 tableGlobalCases.init();
 mainTableTwelveIndex.init();
-GraphInit();
+/*GraphInit();
 Search();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,3 +29,4 @@ mapWrapper.addEventListener('click', (event) => {
 		updateMapInfo(navCount);
 	}
 });
+*/
