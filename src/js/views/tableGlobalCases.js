@@ -1,6 +1,6 @@
-import { createElement } from '../logic/createElement.js';
 import { apiDataCommunicator } from '../logic/apiDataCommunicator.js';
 import { sortTableByColumn } from '../logic/sortMethod.js';
+import addDisplayFullScreen from '../logic/addDisplayOnFullScreen.js';
 
 export const tableGlobalCases = {
 	properties: {
@@ -19,8 +19,9 @@ export const tableGlobalCases = {
 		this.totalGlobalCases();
 		this.createTableTwo();
 		this.fillDataTableTwo();
-        this.updateDate();
-        this.addSorting();
+		this.updateDate();
+		this.addSorting();
+		addDisplayFullScreen('.global__country');
 	},
 
 	async forceUpdateDataAndTime() {
@@ -54,8 +55,8 @@ export const tableGlobalCases = {
 		const tableTwo = `<table class="tableTwo">
             <thead>    
                 <tr>
+                <th>County</th>
                 <th valueType="number">Cases</th>
-                    <th>County</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -68,20 +69,20 @@ export const tableGlobalCases = {
 		let body = '';
 		for (let i = 0; i < this.properties.data.length; i++) {
 			body += `<tr iso2='${this.properties.data[i].countryInfo.iso2}'>
-                                <td>${new Intl.NumberFormat('ru-RU').format(
-																	this.properties.data[i].cases
-																)}</td>
-                                <td><img src= '${
-																	this.properties.data[i].countryInfo.flag
-																}'>${this.properties.data[i].country}</td>
+                        <td><img src= '${
+													this.properties.data[i].countryInfo.flag
+												}'>${this.properties.data[i].country}</td>
+                        <td>${new Intl.NumberFormat('ru-RU').format(
+													this.properties.data[i].cases
+												)}</td>
                             </tr>`;
 		}
 		this.controlsUI.tableBody.innerHTML = body;
 	},
 
 	addSorting() {
-        const headerList = document.querySelectorAll('.tableTwo th');
-        headerList.forEach((headerCell) => {
+		const headerList = document.querySelectorAll('.tableTwo th');
+		headerList.forEach((headerCell) => {
 			headerCell.addEventListener('click', () => {
 				const tableElement =
 					headerCell.parentElement.parentElement.parentElement;
@@ -97,9 +98,9 @@ export const tableGlobalCases = {
 					headerCell.getAttribute('valueType')
 				);
 			});
-        });
-        headerList[0].click();
-        headerList[0].click();
+		});
+		headerList[1].click();
+		headerList[1].click();
 	},
 
 	updateDate() {

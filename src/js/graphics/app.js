@@ -1,4 +1,4 @@
-import Graphics from './Graphics';
+import Graphics from './Graphics.js';
 
 const GraphInit = () => { 
     const dailyAPI = 'https://disease.sh/v3/covid-19/historical/all?lastdays=366';
@@ -15,60 +15,36 @@ const GraphInit = () => {
                            'casesHun', 'deathsHun', 'recoveredHun', 
                            'hunAllCases', 'hunAllDeaths', 'hunAllRecovered'];
 
-    function getParams(operation, fullScreen, country = false, target = 'World') {
-        const paramsNow = document.querySelector('.switchTitle').innerHTML;
-        let indParams;
-        let api = country ? (countriesAPI + country) : dailyAPI;
-        if (arrayParameter.indexOf(paramsNow) === -1) {
-            indParams = 0;
-        } else {
-            indParams = arrayParameter.indexOf(paramsNow);
-        }   
-        if (operation === 'sum') {
-            if (indParams === arrayParamRed.length - 1) {
-                indParams = -1;
-            }
-            document.querySelector('.switchTitle').innerHTML = `${arrayParameter[indParams + 1]}`;
-            getData(api, arrayParamRed[indParams + 1], fullScreen, target);
-        } else {
-            if (indParams === 0) {
-                indParams = arrayParameter.length;
-            }
-            document.querySelector('.switchTitle').innerHTML = `${arrayParameter[indParams - 1]}`;
-            getData(api, arrayParamRed[indParams - 1], fullScreen, target);
-        }
+    
+    function casesPerHundred(cases) {
+        const population = 7827000000;
+        const arrAllPerHundred = [];
+        cases.forEach(elem => {
+            const count = elem / population * 100000;
+            arrAllPerHundred.push(count.toFixed(3));
+        })
+        return arrAllPerHundred;
     }
 
     function setTotalCases(data) {
         const obj = {
-            data: [],
+            data: Object.keys(data.cases),
             cases: []
         }
-        const arrCases = [];
-        const arrDeath = [];
-        const arrRecov = [];
+        const arrCases = Object.values(data.cases);
+        const arrDeath = Object.values(data.deaths);
+        const arrRecov = Object.values(data.recovered);
         const arrDiff = [];
         const arrDiffDeath = [];
         let arrDiffRec = [];
-        for (const key in data.cases) {
-            obj.data.push(key);
-            arrCases.push(data.cases[key]);
-        }
-        for (const key in data.deaths) {
-            arrDeath.push(data.deaths[key]);
-        }
-        for (const key in data.recovered) {
-            arrRecov.push(data.recovered[key]);
-        }
-        
+                            
         for (let i = 1; i < arrCases.length; i += 1) {
             arrDiff.push(arrCases[i] - arrCases[i - 1]);
             arrDiffDeath.push(arrDeath[i] - arrDeath[i - 1]);
             arrDiffRec.push(arrRecov[i] - arrRecov[i - 1]);
         }
-
+                    
         arrDiffRec = arrDiffRec.map(item => item > 0 ? item : 0);
-        obj.data = obj.data.slice(1);
         obj.cases = arrDiff;
         obj.deaths = arrDiffDeath;
         obj.recovered = arrDiffRec;
@@ -84,16 +60,6 @@ const GraphInit = () => {
         return obj;
     }
 
-    function casesPerHundred(cases) {
-        const population = 7827000000;
-        let arrAllPerHundred = [];
-        cases.forEach(elem => {
-            let count = elem / population * 100000;
-            arrAllPerHundred.push(count.toFixed(3));
-        })
-        return arrAllPerHundred;
-    }
-
     function setCountryCases (data) {
         const obj = {
             data: [],
@@ -105,7 +71,7 @@ const GraphInit = () => {
         const arrDate = [];
         const arrDiff = [];
         const arrDiffDeath = [];
-        let arrDiffRec = [];
+        const arrDiffRec = [];
         data.forEach(item => {
             arrCases.push(item.confirmed);
             arrDeath.push(item.deaths);
@@ -131,7 +97,7 @@ const GraphInit = () => {
         obj.hunAllRecovered = casesPerHundred(arrRecov);
         return obj;
     }
-    
+
     function getData(api, param, screen, target = 'World') {
         if (api === 'https://disease.sh/v3/covid-19/historical/all?lastdays=366') {
             fetch(api)
@@ -139,7 +105,7 @@ const GraphInit = () => {
             .then(res => {
                 const total = setTotalCases(res);
                 const graph = new Graphics(total, param, screen, true, target);
-                    graph.init();
+                graph.init();
             }).catch( error => {
                 console.log(error);
             });
@@ -153,8 +119,31 @@ const GraphInit = () => {
             }).catch( error => {
                 console.log(error);
             });
+        }  
+    }
+
+    function getParams(operation, fullScreen, country = false, target = 'World') {
+        const paramsNow = document.querySelector('.switchTitle').innerHTML;
+        let indParams;
+        const api = country ? (countriesAPI + country) : dailyAPI;
+        if (arrayParameter.indexOf(paramsNow) === -1) {
+            indParams = 0;
+        } else {
+            indParams = arrayParameter.indexOf(paramsNow);
+        }   
+        if (operation === 'sum') {
+            if (indParams === arrayParamRed.length - 1) {
+                indParams = -1;
+            }
+            document.querySelector('.switchTitle').innerHTML = `${arrayParameter[indParams + 1]}`;
+            getData(api, arrayParamRed[indParams + 1], fullScreen, target);
+        } else {
+            if (indParams === 0) {
+                indParams = arrayParameter.length;
+            }
+            document.querySelector('.switchTitle').innerHTML = `${arrayParameter[indParams - 1]}`;
+            getData(api, arrayParamRed[indParams - 1], fullScreen, target);
         }
-        
     }
 
     function createElement(tag, style, text = '') {
@@ -204,7 +193,7 @@ const GraphInit = () => {
         document.querySelector('.switchButton.previous').classList.add('fullScreen');
         document.querySelector('.switchButton.next').classList.add('fullScreen');
         document.querySelector('.open').style.display = 'none';
-        let params = arrayParameter.indexOf(document.querySelector('.switchTitle').innerHTML);
+        const params = arrayParameter.indexOf(document.querySelector('.switchTitle').innerHTML);
         let countryName;
         if (document.querySelector('tr.chosen')) {
             countryName = document.querySelector('tr.chosen').children[1].textContent;
@@ -222,7 +211,7 @@ const GraphInit = () => {
     })
 
     setTimeout(() => {
-        document.querySelectorAll('tr').forEach(tr => {
+        document.querySelectorAll('tbody tr').forEach(tr => {
             tr.addEventListener('click', () => {
                 document.querySelectorAll('tr').forEach(item => {
                     if (item.classList.contains('chosen')) item.classList.remove('chosen');
@@ -230,7 +219,7 @@ const GraphInit = () => {
                 tr.classList.add('chosen');
                 const api = countriesAPI + tr.getAttribute('iso2');
                 document.querySelector('.graphBlock').innerHTML = '';
-                getData(api, arrayParamRed[0], false, tr.children[1].textContent);
+                getData(api, arrayParamRed[0], false, tr.children[0].textContent);
             })
         })
     }, 800);

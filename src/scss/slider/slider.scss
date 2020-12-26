@@ -1,0 +1,54 @@
+.switch__tableTwelveIndex {
+    height: 25px;
+    width: 220px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__button {
+    /*background-color: aliceblue;*/
+    height: 20px;
+    width: 0;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    border: 10px solid transparent;
+  
+    &:active {
+      transform: scale(0.8);
+      transition: transform 0.2s linear
+    }
+  
+    &:first-child {
+      border-left-width: 0;
+      border-right-color: $black;
+      
+      &:hover {
+        border-right-color: $grey;
+        transition: border-right-color 0.3s linear;
+      }
+    }
+  
+    &:last-child {
+      border-right-width: 0;
+      border-left-color: $black;
+  
+      &:hover {
+        border-left-color: $grey;
+        transition: border-left-color 0.3s linear;
+      }
+    }
+}
+
+.nav__button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 1px 1px 20px #2C3D82;
+}
+
+.nav__description {
+    font-weight: bold;
+}

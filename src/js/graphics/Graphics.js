@@ -11,15 +11,15 @@ class Graphics {
     }
     
     init() {
-        const mes = ['Январь   ', 'Февраль   ', 'Март   ', 'Апрель   ', 'Май   ', 'Июнь   ', 'Июль   ', 'Август   ', 'Сентябрь   ', 'Октябрь   ', 'Ноябрь   ', 'Декабрь   '];
-        const mesReduced = ['Янв.  ', 'Февр.  ', 'Март  ', 'Апр.  ', 'Май  ', 'Июнь  ', 'Июль  ', 'Авг.  ', 'Сент.  ', 'Окт.  ', 'Нояб.  ', 'Дек.  '];
+        const mes = ['January   ', 'February   ', 'March   ', 'April   ', 'May   ', 'June   ', 'July   ', 'August   ', 'September   ', 'October   ', 'November   ', 'December   '];
+        const mesReduced = ['Jan.  ', 'Feb.  ', 'March  ', 'April  ', 'May  ', 'June  ', 'July  ', 'Aug.  ', 'Sept.  ', 'Oct.  ', 'Nov.  ', 'Dec.  '];
         const ctx = this.createElement('canvas', 'canvas');
         ctx.id = 'myChart';
         ctx.setAttribute('width', '295');
         ctx.setAttribute('height', '190');
         const param = this.parameter;
         const screen = this.fullScreen;
-        const world = this.world;
+        const {world} = this;
         let color = '';
         if (this.parameter === 'recovered' || this.parameter === 'allRecov' 
             || this.parameter === 'recoveredHun' || this.parameter === 'hunAllRecovered') {
@@ -35,7 +35,7 @@ class Graphics {
         if (this.parameter[0] === 'a' || this.parameter[0] === 'h') {
             charType = 'line';
         }
-        
+        // eslint-disable-next-line no-unused-vars
         const myChart = new Chart(ctx, {
             type: charType,
             data: {

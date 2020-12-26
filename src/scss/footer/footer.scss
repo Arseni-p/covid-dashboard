@@ -2,12 +2,12 @@
 
 .footer {
   position: relative;
-  padding: 10px;
+ /* padding: 10px;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-  min-height: 75px;
+  min-height: 55px;
 }
 
 .footer__item {
@@ -60,7 +60,7 @@
 }
 
 
-@media(max-width: 700px) {
+@media(max-width: 992px) {
   .footer {
     padding: 5px;
     padding-top: 0;
