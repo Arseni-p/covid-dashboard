@@ -230,7 +230,7 @@ const GraphInit = () => {
                 tr.classList.add('chosen');
                 const api = countriesAPI + tr.getAttribute('iso2');
                 document.querySelector('.graphBlock').innerHTML = '';
-                getData(api, arrayParamRed[0], false, tr.children[1].textContent);
+                getData(api, arrayParamRed[0], false, tr.children[0].textContent);
             })
         })
     }, 800);

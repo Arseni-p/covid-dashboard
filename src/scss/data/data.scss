@@ -64,14 +64,18 @@
   font-weight: bold;
 }
 
-.table__world td:nth-child(3) {
+.table__world td:nth-child(3), .table__twelve td:nth-child(3) {
   color: yellow;
   font-weight: bold;
 }
 
-.table__world td:nth-child(4) {
+.table__world td:nth-child(4), .table__twelve td:nth-child(4)  {
   color: $green;
   font-weight: bold;
+}
+.table__twelve td:nth-child(3),
+.table__twelve td:nth-child(4){
+   text-align: right;
 }
 
 .table__twelve img {
@@ -101,6 +105,9 @@ thead th:first-child {
 
 .table__twelve td {
   text-align: center;
+  &:first-child {
+      cursor: pointer;  
+    }
 }
 
 .table__twelve th {
@@ -181,7 +188,7 @@ thead th:first-child {
   text-align: center;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 992px) {
 
   .data__lives,
   .data__level {

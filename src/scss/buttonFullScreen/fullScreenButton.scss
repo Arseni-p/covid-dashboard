@@ -1,7 +1,7 @@
 .my__screen__btn {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    top: 105px;
+    right: 11px;
     width: 29px;
     height: 29px;
     z-index: 300;
@@ -85,15 +85,15 @@
     animation: screenClose 1s ease-in-out;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 992px) {
     .screen__btn {
         right: 20px;
     }
 }
 .my__screen__btn.fullScreen {
     position: fixed;
-    bottom: 0;
-    right: 0;
+   top: 7px;
+    right: 15px;
     width: 29px;
     height: 29px;
     z-index: 300;

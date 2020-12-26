@@ -15,11 +15,16 @@ body {
   background-color: $black;
   font-family: 'Open Sans', 'Arial Narrow', Arial, sans-serif;
   color: white;
-  min-height: 768px;
+  min-height: 735px;
   height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   color: white;
   letter-spacing: 1px;
@@ -30,7 +35,8 @@ h4 {
   font-size: 0.8rem;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -53,7 +59,7 @@ button:hover {
   text-transform: uppercase;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 992px) {
   body {
     min-height: 1850px;
   }

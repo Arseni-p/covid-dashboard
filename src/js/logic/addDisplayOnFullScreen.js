@@ -8,7 +8,7 @@ export const addDisplayFullScreen = (querySelector) => {
 		fullScreenContainer,
 		'my__screen__btn'
   );
-  /*
+  
 	fullScreenButton.style.display = 'none';
 
 	fullScreenContainer.addEventListener('mouseover', () => {
@@ -17,7 +17,7 @@ export const addDisplayFullScreen = (querySelector) => {
 
 	fullScreenContainer.addEventListener('mouseout', () => {
 		fullScreenButton.style.display = 'none';
-	});*/
+	});
 
 	let fullState = false;
 
