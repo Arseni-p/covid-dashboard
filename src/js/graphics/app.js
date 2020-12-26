@@ -1,4 +1,4 @@
-import Graphics from './Graphics';
+import Graphics from './Graphics.js';
 
 const GraphInit = () => { 
     const dailyAPI = 'https://disease.sh/v3/covid-19/historical/all?lastdays=366';
