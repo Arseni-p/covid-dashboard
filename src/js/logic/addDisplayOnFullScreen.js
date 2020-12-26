@@ -1,4 +1,4 @@
-import createElement from '../logic/createElement.js';
+import createElement from './createElement.js';
 
 export const addDisplayFullScreen = (querySelector) => {
 	const fullScreenContainer = document.querySelector(querySelector);
