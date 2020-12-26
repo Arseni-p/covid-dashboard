@@ -35,7 +35,7 @@ class Graphics {
         if (this.parameter[0] === 'a' || this.parameter[0] === 'h') {
             charType = 'line';
         }
-        
+        // eslint-disable-next-line no-unused-vars
         const myChart = new Chart(ctx, {
             type: charType,
             data: {
