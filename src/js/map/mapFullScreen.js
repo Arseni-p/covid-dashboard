@@ -1,3 +1,5 @@
+import { createElement } from '../logic/createElement.js';
+
 export const mapFullScreen = () => {
   const fullScreenbtn = document.querySelector('.screen__btn');
   const mapForFull = document.querySelector('.map');

@@ -12,7 +12,7 @@ const Search = () => {
 					j >= 0;
 					j -= 1
 				) {
-					flag = regExp.test(table.tBodies[0].rows[i].cells[1].textContent);
+					flag = regExp.test(table.tBodies[0].rows[i].cells[0].textContent);
 					if (flag) break;
 				}
 				if (flag) {
