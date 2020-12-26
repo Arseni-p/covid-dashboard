@@ -38,9 +38,10 @@
 
     &.fullScreen {
       z-index: 1500;
-      bottom: 167%;
-      right: 122%;
+      top: -20%;
+      left: 94px;
       font-size: 20px;
+      width: 220px;
     }
 
     .switchButton {
@@ -150,8 +151,14 @@
   background-color: rgba(255, 243, 243, 0.5);
 }
 
+.data.data__graph {
+  height: 320px;
+  margin-top: auto;
+}
+
 @media(max-width: 700px) {
   .data.data__graph {
-    min-height: 290px;
+    min-height: 400px;
+    max-height: 400px;
   }
 }

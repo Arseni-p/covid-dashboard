@@ -1,7 +1,7 @@
 .my__screen__btn {
-    position: relative;
-    left: 85%;
-    top: -95%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
     width: 29px;
     height: 29px;
     z-index: 300;
@@ -51,9 +51,7 @@
     from {
         border-radius: 4px;
         transform: rotate(0deg);
-    }
-
-    ;
+    };
 
     to {
         border-radius: 50%;
@@ -94,8 +92,8 @@
 }
 .my__screen__btn.fullScreen {
     position: fixed;
-    left: 95%;
-    top: 30px;
+    bottom: 0;
+    right: 0;
     width: 29px;
     height: 29px;
     z-index: 300;

@@ -49,5 +49,11 @@
 }
 
 @media(max-width: 700px) {
-
+  .global__wrapper {
+    justify-content: flex-start;
+    & .global__country {
+      min-height: 300px;
+      max-height: 300px;
+    }
+  }
 }

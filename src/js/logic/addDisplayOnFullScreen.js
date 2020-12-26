@@ -7,16 +7,17 @@ export const addDisplayFullScreen = (querySelector) => {
 		'button',
 		fullScreenContainer,
 		'my__screen__btn'
-	);
+  );
+  /*
 	fullScreenButton.style.display = 'none';
 
 	fullScreenContainer.addEventListener('mouseover', () => {
-		fullScreenButton.style.display = '';
+		fullScreenButton.style.display = 'block';
 	});
 
 	fullScreenContainer.addEventListener('mouseout', () => {
 		fullScreenButton.style.display = 'none';
-	});
+	});*/
 
 	let fullState = false;
 

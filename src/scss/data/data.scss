@@ -17,14 +17,26 @@
   border-radius: 4px;
 }
 
-.data__lives {
+.data.data__lives {
   width: 100%;
+  height: calc(100% - 330px);
+}
+
+.data.data__lives {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.data__world {
+  height: 45px;
 }
 
 .data__tableTwelveIndex {
   overflow-y: auto;
   overflow-x: auto;
-  height: 250px;
+  height: calc(100% - 80px);
   flex-grow: 1;
   margin-bottom: 10px;
 }
@@ -114,9 +126,6 @@ thead th:first-child {
   background: rgba(47, 79, 79, 1);
 }
 
-
-
-
 .data:last-child {
   margin: 0;
   width: 100%;
@@ -168,10 +177,18 @@ thead th:first-child {
   width: 100%;
 }
 
+.table__world .global__cases {
+  text-align: center;
+}
+
 @media(max-width: 700px) {
 
   .data__lives,
   .data__level {
     height: 200px;
+  }
+
+  .data.data__lives {
+    height: 300px;
   }
 }

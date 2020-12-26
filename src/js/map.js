@@ -46,33 +46,6 @@ export const mapInit = () => {
       
     })
   });
+};
 
-  
-/*
-  data.forEach(item => {
-    console.log(item.countryInfo)
-  }) */
-
-  // L.map('map').setView([53.91, 27.56], 4);
-
-
-/*
-  var map = L.map('mapid').setView([53.91, 27.56], 4);
-  L.tileLayer('https://api.mapbox.com/styles/v1/arseni-p/ckirceov07jyu17qvvf52jahn.html?fresh=true&title=view&access_token=pk.eyJ1IjoiYXJzZW5pLXAiLCJhIjoiY2tpcmJ0bTl5MjQ0ZTJxcWplaHQwbTBucCJ9.hwxgqrrfz1HFJ2wR2sHMSw', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(map);
-
-  L.tileLayer('https://api.mapbox.com/styles/v1/arseni-p/ckirceov07jyu17qvvf52jahn.html?fresh=true&title=view&access_token=pk.eyJ1IjoiYXJzZW5pLXAiLCJhIjoiY2tpcmJ0bTl5MjQ0ZTJxcWplaHQwbTBucCJ9.hwxgqrrfz1HFJ2wR2sHMSw', {
-    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-}).addTo(map);
-var marker = L.marker([L.marker(53.91, 27.56)]).addTo(map);
-*/
-
-}
-
-// https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=ohRx1axR0hGFTkU0Qrth
+export default mapInit;
