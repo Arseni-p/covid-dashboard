@@ -20,7 +20,6 @@ export const keyboard = () => {
   const tableSearch = () => {
     const table = document.querySelector('.tableTwo');
     const regExp = new RegExp(outputArea.value, 'i');
-    console.log(outputArea.value)
     let flag = false;
     for (let i = 0; i < table.tBodies[0].rows.length; i += 1) {
       flag = false;
@@ -201,23 +200,18 @@ export const keyboard = () => {
         moveX = 0
       } else {
         moveX--
-      }
-
+      };
       outputArea.focus();
       outputArea.selectionEnd = outputArea.value.length - moveX;
-
-      console.log('click rightShift', outputArea.selectionStart)
     } else {
       if ( moveX === 0 ) {
         moveX = 0;
       } else {
         moveX--;
-      }
+      };
       outputArea.focus();
       outputArea.selectionStart = outputArea.value.length - moveX;
       outputArea.selectionEnd = outputArea.value.length - moveX;
-    
-      console.log('click right', outputArea.selectionStart)
     }
   });
 

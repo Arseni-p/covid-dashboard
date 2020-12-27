@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-undef */
 import { initMarker } from './init-marker.js';
 import { initPopup } from './init-popup.js';
@@ -13,7 +14,6 @@ export const mapInit = (navCount) => {
   // eslint-disable-next-line no-undef
   mapboxgl.accessToken = mapboxToken;
  
-
   // eslint-disable-next-line prefer-const
   map = new mapboxgl.Map({
     container: 'map',
@@ -75,8 +75,8 @@ export const mapInit = (navCount) => {
       .then(response => response.json() )
       .then( data => {
         const parts = data.results[0].address_components;
-        // eslint-disable-next-line array-callback-return
-        const countryItem = parts.filter(item => {
+        // eslint-disable-next-line consistent-return
+        const countryItem = parts.filter((item) => {
           if (item.types.includes('country')) {
             return item.types.includes('country');
           }

@@ -27,10 +27,8 @@ export const addDisplayFullScreen = (querySelector) => {
 			if (fullScreenContainer.requestFullscreen !== undefined) {
 				fullScreenContainer.requestFullscreen();
 			} else if (fullScreenContainer.webkitRequestFullscreen !== undefined) {
-				/* Safari */
 				fullScreenContainer.webkitRequestFullscreen();
 			} else if (fullScreenContainer.msRequestFullscreen !== undefined) {
-				/* IE11 */
 				fullScreenContainer.msRequestFullscreen();
             }
             fullScreenButton.classList.toggle('fullScreen');
@@ -38,10 +36,8 @@ export const addDisplayFullScreen = (querySelector) => {
 			if (document.exitFullscreen) {
 				document.exitFullscreen();
 			} else if (document.webkitExitFullscreen) {
-				/* Safari */
 				document.webkitExitFullscreen();
 			} else if (document.msExitFullscreen) {
-				/* IE11 */
 				document.msExitFullscreen();
             }
             fullScreenButton.classList.toggle('fullScreen');

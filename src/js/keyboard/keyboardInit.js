@@ -32,11 +32,10 @@ export const keyboardInit = () => {
     } else if ( engLetters[i][j] === 16 ) {
     btn.classList.add('shift');
     btn.textContent = 'Shift';
-    const shiftStatus = document.createElement('span');// indicator
+    const shiftStatus = document.createElement('span');
     shiftStatus.classList.add('shift__status');
     btn.append(shiftStatus);
     } else if ( engLetters[i][j] === 32 ) {
-    // btn.innerHTML = 'Space';
     btn.classList.add('space');
     btn.textContent = 'Space';
     } else if ( engLetters[i][j] === 'left' ) {

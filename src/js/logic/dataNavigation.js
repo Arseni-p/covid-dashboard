@@ -5,7 +5,6 @@ import { posX } from '../global/globalVariables.js';
 export let navCount = 0;
 
 export const dataNavigation = (wrapper, event) => {
-  console.log('lll', navCount, posX)
   const btnLeft = wrapper.querySelector('.nav__left');
   const btnRight = wrapper.querySelector('.nav__right');
   const navList = wrapper.querySelector('.navigation__list');

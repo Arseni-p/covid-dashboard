@@ -12,9 +12,6 @@ export const apiDataCommunicator = {
 			);
 			this.properties.data = await this.properties.data.json();
 		} catch (error) {
-			/* eslint-disable no-console */
-			console.log(error.toString());
-			/* eslint-enable no-console */
 			this.properties.data = null;
 		}
 		return this.properties.data;
