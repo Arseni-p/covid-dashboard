@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 export const mapWrapper = document.querySelector('.map__wrapper');
 export const legendImg = document.querySelectorAll('.legend__img');
 export const legendItems = document.querySelectorAll('.legend__gradation');
@@ -32,4 +33,7 @@ export const legendValues = [
   [70, 50, 30, 10],
   [1, 0.7, 0.4, 0.1],
   [70, 50, 30, 10]  
-]
+];
+
+// eslint-disable-next-line import/no-mutable-exports
+export let posX = 0;

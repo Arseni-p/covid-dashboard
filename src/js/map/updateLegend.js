@@ -17,6 +17,7 @@ export const updateLegend = (navCount, countColors) => {
     if (indexLegendItem === legendLowLine) {
       currLegend = `< ${legendValues[navCount][indexLegendItem-1].toLocaleString()}`
     };
+    // eslint-disable-next-line no-param-reassign
     item.style.backgroundColor = `${countColors[indexLegendColor]}`;
     legendItems[indexLegendItem].textContent = currLegend;
     indexLegendColor -= 1;

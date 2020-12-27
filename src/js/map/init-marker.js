@@ -1,3 +1,4 @@
+// eslint-disable-next-line consistent-return
 export const initMarker = (count, property, navCount) => {
   const topLevel = 4;
   const preTopLevel = 3;

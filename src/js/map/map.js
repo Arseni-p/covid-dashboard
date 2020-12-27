@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { initMarker } from './init-marker.js';
 import { initPopup } from './init-popup.js';
 import { dataView, modeCount } from '../global/globalVariables.js';
@@ -9,14 +10,18 @@ export const mapInit = (navCount) => {
   let dataCovidAPI;
   let map;
   const mapboxToken = 'pk.eyJ1IjoiYXJzZW5pLXAiLCJhIjoiY2tpcmJ0bTl5MjQ0ZTJxcWplaHQwbTBucCJ9.hwxgqrrfz1HFJ2wR2sHMSw'
+  // eslint-disable-next-line no-undef
   mapboxgl.accessToken = mapboxToken;
  
+
+  // eslint-disable-next-line prefer-const
   map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/arseni-p/ckirvn0eu0d5u19qkyps533ks',
     zoom: 2.9,
     center: [15, 53],
   });
+  // eslint-disable-next-line no-undef
   map.addControl(new mapboxgl.NavigationControl());
   initPopup();
   const infoBlock = document.querySelector('.country-info__wrapper');
@@ -42,6 +47,7 @@ export const mapInit = (navCount) => {
       el.className = 'marker';
       el.style.backgroundColor = initMarker(countryInfected, countColors, navCount);
       el.classList.add(initMarker(countryInfected, sizeLevel, navCount));
+      // eslint-disable-next-line no-unused-vars
       const marker = new mapboxgl.Marker(el).setLngLat([countryLong, countryLat]).addTo(map);
     });
   });
@@ -69,6 +75,7 @@ export const mapInit = (navCount) => {
       .then(response => response.json() )
       .then( data => {
         const parts = data.results[0].address_components;
+        // eslint-disable-next-line array-callback-return
         const countryItem = parts.filter(item => {
           if (item.types.includes('country')) {
             return item.types.includes('country');
@@ -77,6 +84,7 @@ export const mapInit = (navCount) => {
 
          if (countryItem && countryItem.length > 0 && mapIn) {
           infoCountry.textContent = countryItem[0].long_name;
+          // eslint-disable-next-line array-callback-return
           dataCovidAPI.find(item => {
             if (item.countryInfo.iso2 === countryItem[0].short_name) {
               infoMap.style.backgroundImage = `url('${item.countryInfo.flag}')`;
