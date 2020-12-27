@@ -7,8 +7,8 @@ export const addDisplayFullScreen = (querySelector) => {
 		'button',
 		fullScreenContainer,
 		'my__screen__btn'
-  );
-  
+	);
+
 	fullScreenButton.style.display = 'none';
 
 	fullScreenContainer.addEventListener('mouseover', () => {
@@ -30,8 +30,8 @@ export const addDisplayFullScreen = (querySelector) => {
 				fullScreenContainer.webkitRequestFullscreen();
 			} else if (fullScreenContainer.msRequestFullscreen !== undefined) {
 				fullScreenContainer.msRequestFullscreen();
-            }
-            fullScreenButton.classList.toggle('fullScreen');
+			}
+			fullScreenButton.classList.toggle('fullScreen');
 		} else {
 			if (document.exitFullscreen) {
 				document.exitFullscreen();
@@ -39,8 +39,8 @@ export const addDisplayFullScreen = (querySelector) => {
 				document.webkitExitFullscreen();
 			} else if (document.msExitFullscreen) {
 				document.msExitFullscreen();
-            }
-            fullScreenButton.classList.toggle('fullScreen');
+			}
+			fullScreenButton.classList.toggle('fullScreen');
 		}
 	});
 };

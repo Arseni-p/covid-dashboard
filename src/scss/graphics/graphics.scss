@@ -6,7 +6,6 @@
   justify-content: center;
 
   &.fullScreen {
-    padding-top: 5%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -38,10 +37,10 @@
 
     &.fullScreen {
       z-index: 1500;
-      bottom: 145%;
-      right: 120%;
+      top: -122%;
+      left: -145%;
       font-size: 20px;
-      width: 220px;
+      width: 370px;
     }
 
     .switchButton {
