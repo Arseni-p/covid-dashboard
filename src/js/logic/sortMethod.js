@@ -1,5 +1,3 @@
-
-
 export function sortTableByColumn(table, column, asc = true, valueType) {
 	const sortModifier = asc ? 1 : -1;
 	const tBody = table.tBodies[0];

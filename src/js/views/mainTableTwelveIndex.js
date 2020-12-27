@@ -92,7 +92,7 @@ export const mainTableTwelveIndex = {
 		cases: null,
 		deaths: null,
 		recovered: null,
-		tableContainer: null
+		tableContainer: null,
 	},
 
 	async init() {

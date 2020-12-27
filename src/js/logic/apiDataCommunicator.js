@@ -1,4 +1,3 @@
-
 export const apiDataCommunicator = {
 	properties: {
 		isDataLoad: false,
@@ -12,9 +11,10 @@ export const apiDataCommunicator = {
 			);
 			this.properties.data = await this.properties.data.json();
 		} catch (error) {
+			console.log(error.toString());
 			this.properties.data = null;
 		}
 		return this.properties.data;
-    }
-   };
+	},
+};
 export default apiDataCommunicator;
