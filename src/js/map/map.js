@@ -5,7 +5,6 @@ import { initPopup } from './init-popup.js';
 import { dataView, modeCount } from '../global/globalVariables.js';
 import { updateLegend } from './updateLegend.js'
 
-
 export const mapInit = (navCount) => {
   let mapIn = false;
   let dataCovidAPI;
