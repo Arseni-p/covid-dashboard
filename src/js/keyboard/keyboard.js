@@ -70,7 +70,7 @@ export const keyboard = () => {
     }
   }
 
-  kbBtn.addEventListener('click', (event) => {
+  kbBtn.addEventListener('click', () => {
     if ( kbOff ) {
       kbWrapper.classList.remove('keyboard__content--off');
       kbWrapper.classList.add('keyboard__content--on');
@@ -108,16 +108,19 @@ export const keyboard = () => {
       )) {
         letter = point.querySelector('.curr__item').textContent;
         
-  // Up & down
         if ( shiftBtn ) {
-          ( outputArea.selectionStart < outputArea.value.length ) ? insertFunc() : outputArea.value +=letter.toUpperCase();
-        } else {
-          ( outputArea.selectionStart < outputArea.value.length ) ? insertFunc() : outputArea.value +=letter.toLowerCase();
-        }
-      }
+          if ( outputArea.selectionStart < outputArea.value.length ) {
+            insertFunc();
+          } else {
+            outputArea.value +=letter.toUpperCase();
+          }
+        } else if ( outputArea.selectionStart < outputArea.value.length ) {
+            insertFunc();
+          } else {
+            outputArea.value +=letter.toLowerCase();
+          }
+      };
 
-  
-  // SHIFT IF CAPSLOCK IS ON
       if ( point.classList.contains('shift') ) {
         if ( !shiftBtn ) {
           shiftStatus.style.backgroundColor = '#90ee90';
@@ -134,14 +137,10 @@ export const keyboard = () => {
         }
       } 
       
-  
-  // SHIFT IF CAPSLOCK IS OFF
-       if ( point.classList.contains('shift') ) {
+      if ( point.classList.contains('shift') ) {
         shiftFunc();
-      }
+      };
 
-  
-  // BACKSPACE
       if ( point.classList.contains('backspace') ) {
         if ( outputArea.selectionStart < outputArea.value.length ) {
           let pointStart = outputArea.selectionStart;
@@ -160,8 +159,7 @@ export const keyboard = () => {
           outputArea.value = outputArea.value.slice(0, -1);
         }
       } 
-  
-  // SPACE
+ 
       if ( point.classList.contains('space') ) {
         letter = ' ';
         insertFunc();
@@ -172,15 +170,25 @@ export const keyboard = () => {
 
   leftBtn.addEventListener('click', () => {
     outputArea.focus();
+    // eslint-disable-next-line no-unused-expressions
     outputArea.selectionStart;
+    // eslint-disable-next-line no-unused-expressions
     outputArea.selectionEnd;
 
     if (shiftBtn) {
-      ( moveX == outputArea.value.length ) ? moveX = outputArea.value.length : moveX++;
+      if ( moveX === outputArea.value.length ) {
+        moveX = outputArea.value.length
+      } else {
+        moveX++;
+      } 
       outputArea.focus();
       outputArea.selectionStart = outputArea.value.length - moveX;
     } else {
-      ( moveX == outputArea.value.length ) ? moveX = outputArea.value.length : moveX++;
+      if ( moveX === outputArea.value.length ) {
+        moveX = outputArea.value.length
+      } else {
+        moveX++;
+      }
       outputArea.focus();
       outputArea.selectionStart = outputArea.value.length - moveX;
       outputArea.selectionEnd = outputArea.value.length - moveX;    
@@ -189,14 +197,22 @@ export const keyboard = () => {
 
   rightBtn.addEventListener('click', () => {
     if (shiftBtn) {
-      ( moveX == 0 ) ? moveX = 0 : moveX--;
+      if ( moveX === 0 ) {
+        moveX = 0
+      } else {
+        moveX--
+      }
 
       outputArea.focus();
       outputArea.selectionEnd = outputArea.value.length - moveX;
 
       console.log('click rightShift', outputArea.selectionStart)
     } else {
-      ( moveX == 0 ) ? moveX = 0 : moveX--;
+      if ( moveX === 0 ) {
+        moveX = 0;
+      } else {
+        moveX--;
+      }
       outputArea.focus();
       outputArea.selectionStart = outputArea.value.length - moveX;
       outputArea.selectionEnd = outputArea.value.length - moveX;
@@ -210,7 +226,6 @@ export const keyboard = () => {
       shiftFunc();
 
       if ( shiftStatus.classList.add('key-bg__click') ) shiftStatus.classList.remove('key-bg__click');
-      if ( soundValue ) clickSoundKeyShift();
 
       shiftStatus.classList.add('key-bg__click');
       setTimeout(() => {
